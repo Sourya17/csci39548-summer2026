@@ -1,0 +1,95 @@
+<!-- Isolation file: TABLES demo.
+     IMPORTANT teaching point: tables are for TABULAR DATA only.
+     In the 1990s people used tables to lay out whole pages — that's
+     a dead practice. Use Flexbox/Grid (we'll cover those later) for layout. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tables demo</title>
+  </head>
+  <body>
+
+    <h1>HTML Tables</h1>
+
+    <!-- 1. MINIMAL TABLE: just rows and cells -->
+    <h2>Minimal table</h2>
+    <table border="1">
+      <tr>
+        <td>Apple</td>
+        <td>Red</td>
+      </tr>
+      <tr>
+        <td>Banana</td>
+        <td>Yellow</td>
+      </tr>
+      <tr>
+        <td>Grape</td>
+        <td>Purple</td>
+      </tr>
+    </table>
+
+    <!-- 2. PROPER TABLE: thead, tbody, th (header cell), td (data cell).
+         Use this structure in real projects — it's accessible and screen-reader-friendly. -->
+    <h2>Proper table structure</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Instructor</th>
+          <th>Credits</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CSCI 39548 - Practical Web Development</td>
+          <td>Sourya Saha</td>
+          <td>3</td>
+          <td>Summer 2026</td>
+        </tr>
+        <tr>
+          <td>CSCI 41500 - Data Communications and Networking</td>
+          <td>Sourya Saha</td>
+          <td>3</td>
+          <td>Spring 2026</td>
+        </tr>
+        <tr>
+          <td>CSCI 235 - Software Design</td>
+          <td>TBD</td>
+          <td>3</td>
+          <td>Fall 2026</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 3. TABLE WITH COLSPAN AND ROWSPAN: merged cells.
+         colspan = how many columns this cell stretches across
+         rowspan = how many rows this cell stretches down -->
+    <h2>Merged cells (colspan / rowspan)</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Morning</th>
+          <th>Afternoon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>Office hours</td>
+          <td rowspan="2">CSCI 39548 lecture<br>(6:40 - 9:48 PM)</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>Research</td>
+        </tr>
+        <tr>
+          <td colspan="3">Weekend: catch up on grading</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>
