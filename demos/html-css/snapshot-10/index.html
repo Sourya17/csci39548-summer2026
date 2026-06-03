@@ -1,0 +1,301 @@
+<!-- Snapshot 10: RESPONSIVE + TRANSITIONS — final polish.
+     New ideas (all in styles/general.css and styles/projects.css):
+       1. Viewport meta tag (in <head> below) — without it, mobile is broken.
+       2. Media query: @media (max-width: 768px)
+          → on small screens: nav stacks vertically, projects become 1 column,
+            About flips to column, header centers, type scales down.
+       3. Transitions: smooth animated changes on hover.
+          transition: transform 0.2s, box-shadow 0.2s
+          → project cards lift on hover
+          → nav links fade their background
+          → buttons get a subtle press effect.
+       4. transform: translateY(-4px) — moves the card up without reflowing layout.
+
+     The HTML barely changes — we just add ONE new tag in <head>: viewport. -->
+
+<!-- Snapshot 09: GRID + POSITIONING.
+     A new PROJECTS section appears with 6 project cards laid out in a CSS GRID.
+     One of the cards has a "FEATURED" ribbon positioned absolutely in its corner.
+
+     (Keeping snapshot-09 comment for reference of what came before.) -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sourya Saha - Portfolio</title>
+
+    <!-- VIEWPORT META — CRITICAL for responsive design.
+         Without this, mobile browsers render the page at desktop width
+         and shrink it to fit, making everything tiny.
+         width=device-width  → use the device's actual width
+         initial-scale=1     → don't zoom in or out by default -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/projects.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="brand">
+        <h1>Sourya Saha</h1>
+        <p class="tagline">Doctoral Student & Computer Science Instructor</p>
+      </div>
+
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="about" class="card">
+        <h2>About Me</h2>
+
+        <div class="about-row">
+          <img id="profile-photo" src="../assets/profile.jpg" alt="Sourya Saha">
+          <div class="about-text">
+            <p>
+              I teach Practical Web Development at Hunter College, CUNY.
+              I love building things, breaking them, and explaining how they work.
+            </p>
+            <p>
+              Based in New York. I write code, I teach code, and sometimes I do both at the same time.
+              This portfolio is also a teaching demo for my CSCI 39548 students.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- NEW: PROJECTS section.
+           The .project-grid is a CSS grid with 3 columns.
+           Each .project-card has position: relative so its FEATURED ribbon
+           can be positioned absolutely within it. -->
+      <section id="projects" class="card">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+          <article class="project-card">
+            <!-- FEATURED RIBBON: position: absolute, top-right of the card. -->
+            <span class="featured-ribbon">Featured</span>
+            <img src="../assets/project-1.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>Course Compass</h3>
+              <p>A semester-planning tool for Hunter students.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="../assets/project-2.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>NYC Subway Tracker</h3>
+              <p>Real-time MTA arrivals on a minimal dashboard.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="../assets/project-3.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>StudySwap</h3>
+              <p>Peer tutoring marketplace for college students.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="../assets/project-4.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>Markdown Notes</h3>
+              <p>Offline-first markdown editor with auto-save.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="../assets/project-5.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>Bookshelf</h3>
+              <p>Track what you read and what you want to read next.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="../assets/project-6.jpg" alt="Project screenshot">
+            <div class="project-info">
+              <h3>CSCI 39548 Demos</h3>
+              <p>Teaching code and walkthroughs for my web dev course.</p>
+              <a href="#">View on GitHub →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>REST APIs</li>
+          <li>PostgreSQL</li>
+          <li>Prisma</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <h3>Currently learning</h3>
+        <ol>
+          <li>Modern React patterns</li>
+          <li>TanStack Query</li>
+          <li>Auth with Clerk</li>
+        </ol>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Degree</th>
+              <th>Years</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hunter College, CUNY</td>
+              <td>PhD, Computer Science</td>
+              <td>2023 – Present</td>
+            </tr>
+            <tr>
+              <td>Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2019 – 2021</td>
+            </tr>
+            <tr>
+              <td>Previous Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2017 – 2019</td>
+            </tr>
+            <tr>
+              <td>Undergraduate Institution</td>
+              <td>BS, Computer Science</td>
+              <td>2014 – 2017</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="teaching" class="card">
+        <h2>Teaching</h2>
+
+        <article class="course">
+          <h3>CSCI 39548 — Practical Web Development</h3>
+          <p class="course-meta">Summer 2026, Hunter College, CUNY.</p>
+          <p>
+            A modern full-stack web development course covering HTML, CSS,
+            JavaScript, TypeScript, React, Node.js, and PostgreSQL.
+          </p>
+        </article>
+
+        <article class="course">
+          <h3>CSCI 41500 — Data Communications and Networking</h3>
+          <p class="course-meta">Spring 2026, Hunter College, CUNY.</p>
+          <p>
+            Networking fundamentals: protocols, routing, TCP/IP, security.
+          </p>
+        </article>
+      </section>
+
+      <aside class="card callout">
+        <h3>Fun fact</h3>
+        <p>
+          I built this entire portfolio in plain HTML and CSS as a teaching demo
+          for my students — no frameworks, no build step, just files in a folder.
+        </p>
+      </aside>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+
+        <p>Want to get in touch? Fill out the form below.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <p>
+            <label for="name">Your name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </p>
+
+          <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </p>
+
+          <p>
+            <label for="subject">Subject:</label><br>
+            <select id="subject" name="subject">
+              <option value="course">Question about the course</option>
+              <option value="research">Research collaboration</option>
+              <option value="job">Job opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6"
+              placeholder="Write your message here..." required></textarea>
+          </p>
+
+          <p>
+            <label>
+              <input type="checkbox" name="newsletter" value="yes">
+              Add me to the newsletter
+            </label>
+          </p>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+
+        <hr>
+
+        <p>Or reach me directly:</p>
+        <div class="contact-links">
+          <a href="mailto:sourya.saha24@login.cuny.edu">Email</a>
+          <a href="https://github.com/" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/sourya-saha-262820171" target="_blank">LinkedIn</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Sourya Saha. Built with plain HTML for CSCI 39548.</p>
+      <a href="#">Back to top ↑</a>
+    </footer>
+
+  </body>
+</html>

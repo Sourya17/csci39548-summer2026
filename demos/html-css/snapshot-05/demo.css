@@ -1,0 +1,29 @@
+/* demo.css — used by 03-external.html only.
+   Separate from the portfolio's main styles.css below. */
+
+body {
+  font-family: Arial;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+h1 {
+  color: #1e40af;
+  font-size: 32px;
+}
+
+p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #1e40af;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}

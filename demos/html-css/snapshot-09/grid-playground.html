@@ -1,0 +1,139 @@
+<!-- Isolation file: CSS GRID playground.
+     A handful of small demos showing the most useful grid patterns. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Grid playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        margin-top: 40px;
+        color: #1e40af;
+      }
+
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+
+      /* Every demo is a grid container. */
+      .demo {
+        display: grid;
+        gap: 12px;
+        background: #dbeafe;
+        border: 2px dashed #1e40af;
+        padding: 12px;
+        margin-bottom: 16px;
+      }
+
+      .demo > div {
+        background: #1e40af;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* --- Demo variants --- */
+      .demo-1 { grid-template-columns: repeat(3, 1fr); }                  /* 3 equal */
+      .demo-2 { grid-template-columns: 1fr 2fr 1fr; }                     /* uneven */
+      .demo-3 { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }  /* responsive */
+      .demo-4 {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 80px 80px;                                    /* explicit rows */
+      }
+      .demo-5 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .demo-5 .wide  { grid-column: span 2; }                             /* item spans 2 cols */
+      .demo-5 .tall  { grid-row: span 2; }                                /* item spans 2 rows */
+
+      .demo-6 {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+          "sidebar header"
+          "sidebar main"
+          "sidebar footer";
+      }
+      .demo-6 .a { grid-area: sidebar; background: #f59e0b; }
+      .demo-6 .b { grid-area: header; }
+      .demo-6 .c { grid-area: main; min-height: 80px; }
+      .demo-6 .d { grid-area: footer; }
+    </style>
+  </head>
+  <body>
+
+    <h1>CSS Grid playground</h1>
+    <p>Each blue box is a grid container. Inspect the page source for the rule
+       that powers each demo.</p>
+
+
+    <h2>1. Three equal columns — <code>repeat(3, 1fr)</code></h2>
+    <div class="demo demo-1">
+      <div>A</div><div>B</div><div>C</div>
+    </div>
+
+
+    <h2>2. Uneven columns — <code>1fr 2fr 1fr</code></h2>
+    <p>The middle column is twice as wide as the others.</p>
+    <div class="demo demo-2">
+      <div>A</div><div>B</div><div>C</div>
+    </div>
+
+
+    <h2>3. Responsive columns — <code>repeat(auto-fit, minmax(120px, 1fr))</code></h2>
+    <p>Resize your browser window: columns wrap automatically. No media queries needed.</p>
+    <div class="demo demo-3">
+      <div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div>
+    </div>
+
+
+    <h2>4. Explicit rows — <code>grid-template-rows: 80px 80px</code></h2>
+    <p>Grid is two-dimensional. You can control row heights too.</p>
+    <div class="demo demo-4">
+      <div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div>
+    </div>
+
+
+    <h2>5. Spanning multiple cells — <code>grid-column: span 2</code></h2>
+    <p>Individual items can stretch across columns or rows.</p>
+    <div class="demo demo-5">
+      <div class="wide">A (spans 2)</div>
+      <div>B</div>
+      <div>C</div>
+      <div class="tall">D (spans 2 rows)</div>
+      <div>E</div>
+      <div>F</div>
+      <div>G</div>
+    </div>
+
+
+    <h2>6. Named areas — <code>grid-template-areas</code></h2>
+    <p>You can describe a layout visually in CSS using named regions.
+       Great for app shells (sidebar / header / main / footer).</p>
+    <div class="demo demo-6">
+      <div class="a">Sidebar</div>
+      <div class="b">Header</div>
+      <div class="c">Main</div>
+      <div class="d">Footer</div>
+    </div>
+
+
+    <p style="margin-top: 60px; color: #6b7280;">
+      Rule of thumb: <strong>Grid</strong> for the page skeleton (2D),
+      <strong>Flexbox</strong> for components inside (1D rows or columns).
+    </p>
+
+  </body>
+</html>

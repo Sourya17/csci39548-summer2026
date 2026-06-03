@@ -1,0 +1,32 @@
+<!-- CSS approach #1: INLINE styles.
+     Styles are written directly on each tag via the `style` attribute.
+     Quick to type, but disaster at scale:
+       - You repeat yourself on every element.
+       - Hard to change a color sitewide.
+       - Mixes structure (HTML) with appearance (CSS). -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS approach 1: Inline</title>
+  </head>
+  <body style="font-family: Arial; background-color: #f5f5f5; padding: 20px;">
+
+    <h1 style="color: #1e40af; font-size: 32px;">Inline CSS</h1>
+
+    <p style="color: #444; font-size: 16px; line-height: 1.5;">
+      The styles for this paragraph live inside its <code>style</code> attribute.
+      Notice how the styles are mixed in with the markup.
+    </p>
+
+    <p style="color: #444; font-size: 16px; line-height: 1.5;">
+      And here is another paragraph with the EXACT SAME styles repeated.
+      Imagine doing this for 200 paragraphs. Imagine changing the color of all of them.
+    </p>
+
+    <button style="background-color: #1e40af; color: white; padding: 10px 20px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">
+      A styled button (inline)
+    </button>
+
+  </body>
+</html>

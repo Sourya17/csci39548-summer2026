@@ -19,9 +19,9 @@ updated **per class** as we cover new material.
 |---|---|
 | **Syllabus** | [`syllabus.pdf`](syllabus.pdf) |
 | **Final project brief** | [`assignments/final-project.pdf`](assignments/final-project.pdf) |
-| **Class 1 slides — Git/GitHub** | [`slides/git_slides.pdf`](slides/git_slides.pdf) |
-| **Class 1 slides — HTML/CSS (pp. 1–31)** | [`slides/html_css.pdf`](slides/html_css.pdf) |
-| **Class 1 demos** | [`demos/html-css/`](demos/html-css/) — `snapshot-01` … `snapshot-03` |
+| **Slides — Git/GitHub** | [`slides/git_slides.pdf`](slides/git_slides.pdf) |
+| **Slides — HTML/CSS (full deck)** | [`slides/html_css.pdf`](slides/html_css.pdf) |
+| **HTML/CSS demos** | [`demos/html-css/`](demos/html-css/) — `snapshot-01` … `snapshot-10` |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
 
 ---

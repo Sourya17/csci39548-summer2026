@@ -1,0 +1,37 @@
+<!-- CSS approach #3: EXTERNAL stylesheet (THIS IS THE WAY).
+     CSS lives in its own .css file and is linked from the <head>.
+     Benefits:
+       - Same stylesheet shared across MANY HTML pages — write once, use everywhere.
+       - Browser caches the .css file; subsequent pages load faster.
+       - Pure separation of concerns: HTML for structure, CSS for appearance.
+     This is what the rest of this portfolio uses, starting now. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS approach 3: External</title>
+
+    <!-- <link> pulls in an external file.
+         rel="stylesheet"     - tells the browser this is a stylesheet
+         href="demo.css"      - relative path to the CSS file -->
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body>
+
+    <h1>External CSS</h1>
+
+    <p>
+      The styles for this page live in <code>demo.css</code> — a separate file.
+      View it in your editor; the HTML knows nothing about colors or fonts.
+    </p>
+
+    <p>
+      I could now create <code>another-page.html</code> and link the SAME
+      <code>demo.css</code> from it. Both pages would share styles. Change the CSS,
+      both pages update. This is the production-grade approach.
+    </p>
+
+    <button>A styled button (external)</button>
+
+  </body>
+</html>

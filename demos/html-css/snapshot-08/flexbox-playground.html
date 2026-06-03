@@ -1,0 +1,134 @@
+<!-- Isolation file: FLEXBOX PLAYGROUND.
+     Six small demos showing what each flex property does.
+     Open this in the browser and scroll through. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f5f5f5;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        margin-top: 40px;
+        color: #1e40af;
+      }
+
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+
+      /* Every .demo is a flex container with 4 visible boxes inside.
+         We toggle ONE property per demo so you can see its effect. */
+      .demo {
+        display: flex;
+        background: #dbeafe;
+        border: 2px dashed #1e40af;
+        padding: 12px;
+        margin-bottom: 16px;
+        min-height: 100px;
+      }
+
+      .demo > div {
+        background: #1e40af;
+        color: white;
+        padding: 16px;
+        margin: 4px;       /* using margin here instead of gap so older browsers behave */
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      /* --- Demo variants --- */
+      .demo-1 { /* default: row, no spacing */ }
+      .demo-2 { justify-content: center; }
+      .demo-3 { justify-content: space-between; }
+      .demo-4 { justify-content: space-around; }
+      .demo-5 { align-items: center; min-height: 150px; }
+      .demo-6 { flex-direction: column; }
+      .demo-7 { flex-wrap: wrap; }
+      .demo-7 > div { width: 200px; }   /* force wrapping */
+    </style>
+  </head>
+  <body>
+
+    <h1>Flexbox playground</h1>
+    <p>
+      Each box below is a flex container. Inspect the CSS for each
+      <code>.demo-N</code> rule in the page source to see what changed.
+    </p>
+
+
+    <h2>1. Default: <code>display: flex</code></h2>
+    <p>Children line up in a row. That's all default flex does.</p>
+    <div class="demo demo-1">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>2. <code>justify-content: center</code></h2>
+    <p>Pushes children to the center of the row (main axis).</p>
+    <div class="demo demo-2">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>3. <code>justify-content: space-between</code></h2>
+    <p>First child sticks to start, last to end, rest evenly spaced.</p>
+    <div class="demo demo-3">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>4. <code>justify-content: space-around</code></h2>
+    <p>Equal space around each child (so half-gap at the very ends).</p>
+    <div class="demo demo-4">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>5. <code>align-items: center</code></h2>
+    <p>Vertical centering (cross axis when direction = row). The thing you'd
+       spend hours googling in 2015.</p>
+    <div class="demo demo-5">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>6. <code>flex-direction: column</code></h2>
+    <p>Now the main axis is vertical. justify-content controls vertical,
+       align-items controls horizontal. Mind-bender.</p>
+    <div class="demo demo-6">
+      <div>A</div><div>B</div><div>C</div><div>D</div>
+    </div>
+
+
+    <h2>7. <code>flex-wrap: wrap</code></h2>
+    <p>Children that don't fit on one line wrap to the next.</p>
+    <div class="demo demo-7">
+      <div>Item one</div>
+      <div>Item two</div>
+      <div>Item three</div>
+      <div>Item four</div>
+      <div>Item five</div>
+    </div>
+
+
+    <p style="margin-top: 60px; color: #6b7280;">
+      Master these four and you can do 90% of UI layouts:
+      <strong>justify-content</strong>,
+      <strong>align-items</strong>,
+      <strong>gap</strong>,
+      <strong>flex-direction</strong>.
+    </p>
+
+  </body>
+</html>

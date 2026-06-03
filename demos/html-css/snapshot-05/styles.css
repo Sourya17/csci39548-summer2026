@@ -1,0 +1,104 @@
+/* styles.css — first real stylesheet for the portfolio.
+   This is the file that the rest of the snapshots will keep extending.
+   Today's goal: make the page look intentional, not native-browser-ugly.
+   We're only using TAG selectors so far — no classes yet (those come in snapshot 06). */
+
+/* body — the outermost visible element.
+   Setting font here makes EVERY child inherit it (unless overridden). */
+body {
+  font-family: Arial, sans-serif;   /* fallback chain: try Arial, else any sans-serif */
+  background-color: #f5f5f5;        /* soft gray page background */
+  color: #333;                       /* default text color */
+  line-height: 1.6;                  /* taller lines = easier to read */
+  margin: 0;                         /* remove default <body> margin */
+  padding: 20px;                     /* breathing room around the whole page */
+  max-width: 800px;                  /* don't let lines get too wide */
+  margin-left: auto;                 /* center the page */
+  margin-right: auto;
+}
+
+/* Headings — tighter line height, branded color. */
+h1 {
+  color: #1e40af;                    /* deep blue, our brand color */
+  font-size: 36px;
+}
+
+h2 {
+  color: #1e40af;
+  font-size: 24px;
+  border-bottom: 2px solid #e5e7eb;  /* subtle divider under each section heading */
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+h3 {
+  color: #1e3a8a;                    /* slightly darker blue */
+  font-size: 18px;
+}
+
+/* Links — remove the default blue/purple underline look. */
+a {
+  color: #1e40af;
+  text-decoration: none;             /* remove underline */
+}
+
+a:hover {
+  text-decoration: underline;        /* underline on hover so it's still clearly clickable */
+}
+
+/* Images — never overflow their container. */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;                /* slightly rounded corners */
+}
+
+/* Buttons — friendly blue, hover dims. */
+button {
+  background-color: #1e40af;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Form inputs — give them room to breathe. */
+input, textarea, select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table — make borders behave normally and add spacing. */
+table {
+  border-collapse: collapse;         /* merge double borders into single lines */
+  width: 100%;
+  margin: 16px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #d1d5db;
+}
+
+th {
+  background-color: #e5e7eb;         /* light gray header row */
+}
+
+/* Footer — small, muted, centered. */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}

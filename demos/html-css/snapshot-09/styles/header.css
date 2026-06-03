@@ -1,0 +1,53 @@
+/* ========================================================================
+   header.css — styles ONLY for the site header and its nav.
+   Loaded AFTER general.css so it can rely on the design tokens (--vars).
+   ======================================================================== */
+
+
+/* SITE HEADER — flex row with TWO children:
+     .brand  (logo + tagline)   on the LEFT
+     .site-nav (links)          on the RIGHT
+
+   display: flex           → row layout
+   justify-content: space-between → push them to opposite ends
+   align-items: center     → vertically align the two blocks
+   gap                     → minimum gap if they get close
+   padding-bottom          → space before the cards start */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.brand h1 { margin: 0; }
+.brand .tagline {
+  color: var(--color-muted);
+  font-size: var(--text-base);
+  margin: 0;
+}
+
+
+/* SITE NAV — flex row of links with gap.
+   No more "margin-right + last-of-type" hacks; gap handles spacing.
+   align-items in the parent already vertically centers us. */
+.site-nav {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.site-nav a {
+  font-weight: 500;
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--space-1);
+  transition: background-color 0.15s;
+}
+
+.site-nav a:hover {
+  background-color: var(--color-border);
+  text-decoration: none;       /* override the global underline-on-hover */
+}

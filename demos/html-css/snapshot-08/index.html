@@ -1,0 +1,232 @@
+<!-- Snapshot 08: FLEXBOX.
+     New ideas:
+       - display: flex turns a container into a "flex container"
+       - children become flex items, arranged in a row by default
+       - 4 properties do 90% of the work:
+           justify-content   (main axis alignment, default = row, so horizontal)
+           align-items       (cross axis, vertical when row)
+           gap               (space between children — replaces awkward margins)
+           flex-direction    (row / column / row-reverse / column-reverse)
+
+     ALSO: CSS is now SPLIT into multiple files under styles/.
+       styles/general.css  - resets, typography, design tokens, base components
+       styles/header.css   - header + nav specifically
+     This mirrors what real projects do — one stylesheet per concern.
+
+     See flexbox-playground.html for an isolation demo. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sourya Saha - Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Multiple stylesheets — they load top-to-bottom and combine.
+         Later rules can override earlier ones (cascade). -->
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+  </head>
+  <body>
+
+    <!-- HEADER becomes a FLEX ROW:
+         logo+tagline on the left, nav links on the right.
+         See styles/header.css for the flex magic. -->
+    <header class="site-header">
+      <div class="brand">
+        <h1>Sourya Saha</h1>
+        <p class="tagline">Doctoral Student & Computer Science Instructor</p>
+      </div>
+
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="about" class="card">
+        <h2>About Me</h2>
+
+        <!-- ABOUT becomes a FLEX ROW too:
+             photo on the left, text on the right.
+             Without flexbox we'd need floats or tables — both painful. -->
+        <div class="about-row">
+          <img id="profile-photo" src="../assets/profile.jpg" alt="Sourya Saha">
+          <div class="about-text">
+            <p>
+              I teach Practical Web Development at Hunter College, CUNY.
+              I love building things, breaking them, and explaining how they work.
+            </p>
+            <p>
+              Based in New York. I write code, I teach code, and sometimes I do both at the same time.
+              This portfolio is also a teaching demo for my CSCI 39548 students.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+
+        <!-- SKILLS becomes a FLEX ROW with wrapping:
+             chips wrap to a new line if they don't fit. -->
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>REST APIs</li>
+          <li>PostgreSQL</li>
+          <li>Prisma</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <h3>Currently learning</h3>
+        <ol>
+          <li>Modern React patterns</li>
+          <li>TanStack Query</li>
+          <li>Auth with Clerk</li>
+        </ol>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Degree</th>
+              <th>Years</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hunter College, CUNY</td>
+              <td>PhD, Computer Science</td>
+              <td>2023 – Present</td>
+            </tr>
+            <tr>
+              <td>Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2019 – 2021</td>
+            </tr>
+            <tr>
+              <td>Previous Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2017 – 2019</td>
+            </tr>
+            <tr>
+              <td>Undergraduate Institution</td>
+              <td>BS, Computer Science</td>
+              <td>2014 – 2017</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="teaching" class="card">
+        <h2>Teaching</h2>
+
+        <article class="course">
+          <h3>CSCI 39548 — Practical Web Development</h3>
+          <p class="course-meta">Summer 2026, Hunter College, CUNY.</p>
+          <p>
+            A modern full-stack web development course covering HTML, CSS,
+            JavaScript, TypeScript, React, Node.js, and PostgreSQL.
+          </p>
+        </article>
+
+        <article class="course">
+          <h3>CSCI 41500 — Data Communications and Networking</h3>
+          <p class="course-meta">Spring 2026, Hunter College, CUNY.</p>
+          <p>
+            Networking fundamentals: protocols, routing, TCP/IP, security.
+          </p>
+        </article>
+      </section>
+
+      <aside class="card callout">
+        <h3>Fun fact</h3>
+        <p>
+          I built this entire portfolio in plain HTML and CSS as a teaching demo
+          for my students — no frameworks, no build step, just files in a folder.
+        </p>
+      </aside>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+
+        <p>Want to get in touch? Fill out the form below.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <p>
+            <label for="name">Your name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </p>
+
+          <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </p>
+
+          <p>
+            <label for="subject">Subject:</label><br>
+            <select id="subject" name="subject">
+              <option value="course">Question about the course</option>
+              <option value="research">Research collaboration</option>
+              <option value="job">Job opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6"
+              placeholder="Write your message here..." required></textarea>
+          </p>
+
+          <p>
+            <label>
+              <input type="checkbox" name="newsletter" value="yes">
+              Add me to the newsletter
+            </label>
+          </p>
+
+          <!-- BUTTON GROUP becomes a FLEX ROW with gap. -->
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+
+        <hr>
+
+        <!-- CONTACT LINKS row — flex with gap. -->
+        <p>Or reach me directly:</p>
+        <div class="contact-links">
+          <a href="mailto:sourya.saha24@login.cuny.edu">Email</a>
+          <a href="https://github.com/" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/sourya-saha-262820171" target="_blank">LinkedIn</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER as a FLEX ROW: copyright left, "back to top" right. -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Sourya Saha. Built with plain HTML for CSCI 39548.</p>
+      <a href="#">Back to top ↑</a>
+    </footer>
+
+  </body>
+</html>

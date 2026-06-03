@@ -1,0 +1,195 @@
+<!-- Snapshot 06: SELECTORS + BOX MODEL.
+     HTML now has CLASSES so CSS can target specific elements.
+
+     New ideas:
+       - class selectors (.card, .btn, .btn-primary)
+       - id selectors (#profile-photo)
+       - specificity: id > class > tag
+       - the BOX MODEL: every element is a box made of content + padding + border + margin
+       - box-sizing: border-box (saves so much pain)
+
+     The page now has visible "cards" around each section. Open DevTools and click
+     the box model diagram on a .card to see content/padding/border/margin in action. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sourya Saha - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <h1>Sourya Saha</h1>
+      <p class="tagline">Doctoral Student & Computer Science Instructor</p>
+
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <img id="profile-photo" src="../assets/profile.jpg" width="200">
+        <p>
+          I teach Practical Web Development at Hunter College, CUNY.
+          I love building things, breaking them, and explaining how they work.
+        </p>
+        <p>
+          Based in New York. I write code, I teach code, and sometimes I do both at the same time.
+          This portfolio is also a teaching demo for my CSCI 39548 students.
+        </p>
+      </section>
+
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>HTML, CSS, JavaScript, TypeScript</li>
+          <li>React, Tailwind CSS</li>
+          <li>Node.js, Express, REST APIs</li>
+          <li>PostgreSQL, Prisma</li>
+          <li>Git & GitHub workflows</li>
+        </ul>
+
+        <h3>Currently learning</h3>
+        <ol>
+          <li>Modern React patterns</li>
+          <li>TanStack Query</li>
+          <li>Auth with Clerk</li>
+        </ol>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Degree</th>
+              <th>Years</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hunter College, CUNY</td>
+              <td>PhD, Computer Science</td>
+              <td>2023 – Present</td>
+            </tr>
+            <tr>
+              <td>Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2019 – 2021</td>
+            </tr>
+            <tr>
+              <td>Previous Masters Institution</td>
+              <td>MS, Computer Science</td>
+              <td>2017 – 2019</td>
+            </tr>
+            <tr>
+              <td>Undergraduate Institution</td>
+              <td>BS, Computer Science</td>
+              <td>2014 – 2017</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="teaching" class="card">
+        <h2>Teaching</h2>
+
+        <article class="course">
+          <h3>CSCI 39548 — Practical Web Development</h3>
+          <p class="course-meta">Summer 2026, Hunter College, CUNY.</p>
+          <p>
+            A modern full-stack web development course covering HTML, CSS,
+            JavaScript, TypeScript, React, Node.js, and PostgreSQL.
+          </p>
+        </article>
+
+        <article class="course">
+          <h3>CSCI 41500 — Data Communications and Networking</h3>
+          <p class="course-meta">Spring 2026, Hunter College, CUNY.</p>
+          <p>
+            Networking fundamentals: protocols, routing, TCP/IP, security.
+          </p>
+        </article>
+      </section>
+
+      <aside class="card callout">
+        <h3>Fun fact</h3>
+        <p>
+          I built this entire portfolio in plain HTML and CSS as a teaching demo
+          for my students — no frameworks, no build step, just files in a folder.
+        </p>
+      </aside>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+
+        <p>Want to get in touch? Fill out the form below.</p>
+
+        <form action="#" method="POST" class="contact-form">
+          <p>
+            <label for="name">Your name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+          </p>
+
+          <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </p>
+
+          <p>
+            <label for="subject">Subject:</label><br>
+            <select id="subject" name="subject">
+              <option value="course">Question about the course</option>
+              <option value="research">Research collaboration</option>
+              <option value="job">Job opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="6"
+              placeholder="Write your message here..." required></textarea>
+          </p>
+
+          <p>
+            <label>
+              <input type="checkbox" name="newsletter" value="yes">
+              Add me to the newsletter
+            </label>
+          </p>
+
+          <p>
+            <!-- Two button styles, demonstrated via classes.
+                 .btn is the shared base; .btn-primary and .btn-secondary are variants. -->
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+          </p>
+        </form>
+
+        <hr>
+
+        <p>Or reach me directly:</p>
+        <a href="mailto:sourya.saha24@login.cuny.edu">sourya.saha24@login.cuny.edu</a>
+        <br>
+        <a href="https://github.com/" target="_blank">GitHub Profile</a>
+        <br>
+        <a href="https://www.linkedin.com/in/sourya-saha-262820171" target="_blank">LinkedIn</a>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Sourya Saha. Built with plain HTML for CSCI 39548.</p>
+    </footer>
+
+  </body>
+</html>

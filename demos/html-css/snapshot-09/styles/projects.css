@@ -1,0 +1,99 @@
+/* ========================================================================
+   projects.css — GRID layout for the projects section + positioned ribbon.
+   Loaded AFTER general.css and header.css.
+   ======================================================================== */
+
+
+/* ------------------------------------------------------------------------
+   PROJECT GRID — 2D layout with CSS Grid.
+
+     display: grid                          → turn the container into a grid
+     grid-template-columns: repeat(3, 1fr)  → 3 equal columns
+       (1fr = "one fraction of available space")
+     gap: 1.5rem                            → space between rows AND columns
+
+   Want 4 columns? repeat(4, 1fr). Want 2 columns of different widths?
+   grid-template-columns: 2fr 1fr. Grid is that flexible.
+   ------------------------------------------------------------------------ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+
+/* ------------------------------------------------------------------------
+   PROJECT CARD — the wrapper for each project.
+
+   CRITICAL: position: relative.
+   This makes the card act as the POSITIONING ANCHOR for any
+   absolutely-positioned children. Without it, the .featured-ribbon would
+   jump to the top-left of the entire page.
+
+   Rule: "Put position: absolute INSIDE position: relative."
+   ------------------------------------------------------------------------ */
+.project-card {
+  position: relative;            /* ← anchor for the ribbon below */
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--space-2);
+  overflow: hidden;              /* clip the image corners to match the card */
+}
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;             /* crop to fill, don't distort */
+  border-radius: 0;              /* override general.css rounding for the top corners */
+}
+
+.project-info {
+  padding: var(--space-4);
+}
+
+.project-info h3 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.project-info p {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.project-info a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------------------
+   FEATURED RIBBON — positioned ABSOLUTELY in the top-right of its card.
+
+     position: absolute → removed from normal flow
+     top: 12px          → 12px from the parent's top edge
+     right: 12px        → 12px from the parent's right edge
+     z-index: 1         → in front of the image (which has no z-index)
+
+   The "parent" here is the .project-card because we set position: relative
+   on it above. Without that, this ribbon would float to the page top-right.
+   ------------------------------------------------------------------------ */
+.featured-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+
+  background-color: var(--color-accent-border);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 9999px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}

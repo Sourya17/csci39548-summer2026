@@ -1,0 +1,225 @@
+/* ========================================================================
+   styles.css — Snapshot 06
+   New ideas in this file:
+     1. The UNIVERSAL RESET with box-sizing: border-box
+     2. Class selectors (.card, .btn) and ID selectors (#profile-photo)
+     3. The BOX MODEL: content → padding → border → margin
+     4. Specificity: ID (100) > class (10) > tag (1)
+   ======================================================================== */
+
+
+/* ------------------------------------------------------------------------
+   1. THE UNIVERSAL RESET
+   `*` matches every element on the page.
+   box-sizing: border-box means width = content + padding + border.
+   Without this, width = content ONLY, and padding pushes the box bigger.
+   Set it once at the top and forget about it.
+   ------------------------------------------------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------------------
+   2. BASE STYLES — tag selectors
+   These apply to every <body>, every <h1>, etc. unless overridden.
+   ------------------------------------------------------------------------ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;                           /* zero out browser default */
+  padding: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 { color: #1e40af; font-size: 36px; margin: 0 0 8px 0; }
+h2 { color: #1e40af; font-size: 24px; margin: 0 0 16px 0; }
+h3 { color: #1e3a8a; font-size: 18px; margin: 0 0 8px 0; }
+
+a {
+  color: #1e40af;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* ------------------------------------------------------------------------
+   3. CLASS SELECTORS — reusable styling
+   A class selector starts with a DOT. Same class can be applied to many
+   elements. One element can have many classes (separated by spaces in HTML).
+   ------------------------------------------------------------------------ */
+
+/* .card — the white box around every section.
+   This is where the BOX MODEL comes alive:
+     content      = the text/elements inside
+     padding 24px = space INSIDE the border (between content and border)
+     border  1px  = the visible edge
+     margin  16px = space OUTSIDE the border (between this card and the next)
+   Open DevTools → Elements → click a .card → see the box model diagram. */
+.card {
+  background-color: white;
+  padding: 24px;                       /* INNER space */
+  margin-bottom: 20px;                 /* OUTER space below each card */
+  border: 1px solid #e5e7eb;           /* the visible boundary */
+  border-radius: 8px;                  /* rounded corners */
+}
+
+/* .callout — a variant card. Note how we can ADD this class to an element
+   that already has .card; both rules apply (a card AND a callout). */
+.callout {
+  background-color: #fef3c7;           /* warm yellow */
+  border-left: 4px solid #f59e0b;      /* thick orange left edge */
+}
+
+
+/* ------------------------------------------------------------------------
+   4. THE BUTTON SYSTEM — base class + variants
+   .btn is the shared shape; .btn-primary and .btn-secondary are colors.
+   In HTML you write: class="btn btn-primary" or class="btn btn-secondary".
+   ------------------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1e40af;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #1e3a8a;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #333;
+}
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+
+/* ------------------------------------------------------------------------
+   5. OTHER COMPONENTS — using class selectors
+   ------------------------------------------------------------------------ */
+
+.tagline {
+  color: #666;
+  font-size: 18px;
+  margin: 0 0 16px 0;
+}
+
+.site-nav a {
+  margin-right: 16px;                  /* space between nav links */
+  font-weight: bold;
+}
+
+.skills-list li {
+  margin-bottom: 4px;                  /* small gap between skill items */
+}
+
+.course {
+  padding: 16px;
+  border-left: 3px solid #1e40af;      /* blue accent on left edge */
+  background-color: #f9fafb;
+  margin-bottom: 16px;
+}
+
+.course-meta {
+  color: #666;
+  font-style: italic;
+  font-size: 14px;
+  margin: 0 0 8px 0;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* ------------------------------------------------------------------------
+   6. ID SELECTOR — for ONE specific element
+   IDs start with a # in CSS (and id="..." in HTML).
+   Use sparingly — they're more "powerful" (higher specificity) than classes,
+   which makes them harder to override later. Most styling should use classes.
+   ------------------------------------------------------------------------ */
+#profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;                  /* perfect circle */
+  border: 4px solid #1e40af;           /* blue ring around photo */
+  object-fit: cover;                   /* crop to fill without distortion */
+}
+
+
+/* ------------------------------------------------------------------------
+   7. SPECIFICITY DEMO (read the comments)
+   If multiple rules target the same element, CSS picks the most specific.
+   Specificity points:
+     - inline style ("style=" attr) = 1000
+     - id selector (#foo)            = 100
+     - class selector (.foo)         = 10
+     - tag selector (p)              = 1
+
+   Example below: `p` rule sets color gray. `.course-meta` rule sets it
+   muted gray. The class wins because 10 > 1.
+   ------------------------------------------------------------------------ */
+p {
+  color: #333;                         /* 1 point */
+}
+
+/* `.course-meta` is more specific (10 points) so this overrides the above
+   for any <p class="course-meta">. The previous .course-meta rule already
+   demonstrates this — kept here as a teaching note. */
+
+
+/* ------------------------------------------------------------------------
+   8. TABLES + FOOTER
+   ------------------------------------------------------------------------ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #d1d5db;
+}
+
+th {
+  background-color: #e5e7eb;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}

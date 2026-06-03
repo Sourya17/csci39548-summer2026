@@ -1,0 +1,162 @@
+<!-- Isolation file: EVERY common input type.
+     Open this side-by-side with index.html so students see all the
+     building blocks in one place. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms demo</title>
+  </head>
+  <body>
+
+    <h1>HTML Form Inputs — every common type</h1>
+
+    <form action="#" method="POST">
+
+      <!-- FIELDSET groups related inputs. LEGEND is its caption.
+           Useful for accessibility and visual grouping. -->
+      <fieldset>
+        <legend>Text-style inputs</legend>
+
+        <p>
+          <label for="t1">type="text" (default)</label><br>
+          <input type="text" id="t1" name="t1" placeholder="any text">
+        </p>
+
+        <p>
+          <label for="t2">type="email" (validates @ format)</label><br>
+          <input type="email" id="t2" name="t2" placeholder="you@example.com">
+        </p>
+
+        <p>
+          <label for="t3">type="password" (masks input)</label><br>
+          <input type="password" id="t3" name="t3">
+        </p>
+
+        <p>
+          <label for="t4">type="number" (numeric only, with spinner)</label><br>
+          <input type="number" id="t4" name="t4" min="0" max="100" step="1">
+        </p>
+
+        <p>
+          <label for="t5">type="url" (validates URL format)</label><br>
+          <input type="url" id="t5" name="t5" placeholder="https://...">
+        </p>
+
+        <p>
+          <label for="t6">type="search" (with clear button in some browsers)</label><br>
+          <input type="search" id="t6" name="t6">
+        </p>
+
+        <p>
+          <label for="t7">type="tel" (phone keyboard on mobile)</label><br>
+          <input type="tel" id="t7" name="t7">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Date / time inputs</legend>
+
+        <p>
+          <label for="d1">type="date"</label><br>
+          <input type="date" id="d1" name="d1">
+        </p>
+
+        <p>
+          <label for="d2">type="time"</label><br>
+          <input type="time" id="d2" name="d2">
+        </p>
+
+        <p>
+          <label for="d3">type="datetime-local"</label><br>
+          <input type="datetime-local" id="d3" name="d3">
+        </p>
+
+        <p>
+          <label for="d4">type="month"</label><br>
+          <input type="month" id="d4" name="d4">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Selection inputs</legend>
+
+        <!-- CHECKBOX: pick zero or more. -->
+        <p>What topics interest you? (pick any)</p>
+        <p>
+          <label><input type="checkbox" name="topic" value="html"> HTML</label><br>
+          <label><input type="checkbox" name="topic" value="css"> CSS</label><br>
+          <label><input type="checkbox" name="topic" value="js"> JavaScript</label><br>
+          <label><input type="checkbox" name="topic" value="react"> React</label>
+        </p>
+
+        <!-- RADIO: pick exactly one from a group.
+             All radios in a group MUST share the same `name`. -->
+        <p>Experience level:</p>
+        <p>
+          <label><input type="radio" name="level" value="beginner"> Beginner</label><br>
+          <label><input type="radio" name="level" value="intermediate"> Intermediate</label><br>
+          <label><input type="radio" name="level" value="advanced"> Advanced</label>
+        </p>
+
+        <!-- SELECT (dropdown): pick one. -->
+        <p>
+          <label for="role">Role:</label><br>
+          <select id="role" name="role">
+            <option value="">-- choose one --</option>
+            <option value="student">Student</option>
+            <option value="instructor">Instructor</option>
+            <option value="other">Other</option>
+          </select>
+        </p>
+
+        <!-- SELECT with multiple: pick many. Hold Ctrl/Cmd to multi-select. -->
+        <p>
+          <label for="langs">Languages (Ctrl/Cmd + click):</label><br>
+          <select id="langs" name="langs" multiple size="4">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="zh">Chinese</option>
+            <option value="bn">Bengali</option>
+            <option value="hi">Hindi</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Special inputs</legend>
+
+        <p>
+          <label for="r1">type="range" (slider)</label><br>
+          <input type="range" id="r1" name="r1" min="0" max="100" value="50">
+        </p>
+
+        <p>
+          <label for="c1">type="color" (color picker)</label><br>
+          <input type="color" id="c1" name="c1" value="#3b82f6">
+        </p>
+
+        <p>
+          <label for="f1">type="file" (file upload)</label><br>
+          <input type="file" id="f1" name="f1">
+        </p>
+
+        <p>
+          <label for="m1">multi-line text (&lt;textarea&gt;):</label><br>
+          <textarea id="m1" name="m1" rows="4" cols="40"></textarea>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Submit</legend>
+        <p>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+          <button type="button">Plain button (does nothing without JS)</button>
+        </p>
+      </fieldset>
+
+    </form>
+
+  </body>
+</html>

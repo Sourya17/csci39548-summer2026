@@ -1,0 +1,91 @@
+/* ========================================================================
+   projects.css — Snapshot 10: project grid + hover lift + responsive.
+   Adds the signature "card lifts on hover" effect and 1-column mobile layout.
+   ======================================================================== */
+
+
+/* PROJECT GRID — 3 columns on desktop. */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+
+/* PROJECT CARD — now with a hover LIFT.
+   - transition declares which properties animate and how long.
+   - on :hover the card moves up 4px and gets a bigger shadow.
+   - position: relative still anchors the .featured-ribbon. */
+.project-card {
+  position: relative;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--space-2);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+
+  /* NEW: animate transform and box-shadow over 0.2s with an ease curve. */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);          /* lift up by 4px */
+  box-shadow: var(--shadow-md);          /* bigger shadow */
+}
+
+
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.project-info { padding: var(--space-4); }
+
+.project-info h3 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.project-info p {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.project-info a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+
+/* FEATURED RIBBON. */
+.featured-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  background-color: var(--color-accent-border);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 9999px;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+
+/* ========================================================================
+   RESPONSIVE — project grid collapses on small screens.
+   ======================================================================== */
+@media (max-width: 768px) {
+  /* On mobile, single column — easier to read on a phone. */
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

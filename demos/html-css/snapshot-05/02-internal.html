@@ -1,0 +1,63 @@
+<!-- CSS approach #2: INTERNAL styles.
+     Styles are written inside a <style> block in the <head>.
+     Better than inline because:
+       - You write the rule ONCE; all matching elements use it.
+       - HTML stays clean of style attributes.
+     Still has a downside: these styles only apply to THIS one page.
+     If you want them on 10 pages, you copy-paste 10 times. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS approach 2: Internal</title>
+
+    <!-- The <style> block contains CSS rules.
+         Selectors target elements; declarations set their styling. -->
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #1e40af;
+        font-size: 32px;
+      }
+
+      /* This rule applies to EVERY <p> on the page. Write once, apply everywhere. */
+      p {
+        color: #444;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      button {
+        background-color: #1e40af;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Internal CSS</h1>
+
+    <p>
+      The styles for this page live in the &lt;style&gt; block in &lt;head&gt;.
+      Notice how the markup is clean — no style attributes anywhere.
+    </p>
+
+    <p>
+      And here is another paragraph. It picks up the same styles automatically
+      because the rule targets <code>p</code>, which matches every paragraph.
+    </p>
+
+    <button>A styled button (internal)</button>
+
+  </body>
+</html>
