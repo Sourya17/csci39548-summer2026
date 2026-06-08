@@ -22,7 +22,10 @@ updated **per class** as we cover new material.
 | **Slides — Git/GitHub** | [`slides/git_slides.pdf`](slides/git_slides.pdf) |
 | **Slides — HTML/CSS (full deck)** | [`slides/html_css.pdf`](slides/html_css.pdf) |
 | **HTML/CSS demos** | [`demos/html-css/`](demos/html-css/) — `snapshot-01` … `snapshot-10` |
+| **Slides — JavaScript (S3, pp 1–90)** | [`slides/javascript.pdf`](slides/javascript.pdf) — full deck after S4 |
+| **JavaScript demos** | [`demos/javascript/`](demos/javascript/) — `snapshot-01` … `snapshot-07` (08–10 after S4) |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
+| **Assignment 2** | [`assignments/assignment-02.pdf`](assignments/assignment-02.pdf) — due **Mon Jun 15** |
 
 ---
 
