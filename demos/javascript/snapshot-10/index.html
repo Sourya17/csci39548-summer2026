@@ -1,0 +1,53 @@
+<!-- Snapshot 10: ASYNC/AWAIT + FETCH + JSON + LOCALSTORAGE + TRY/CATCH.
+     The finale. Todos load from a real API on first run,
+     then persist to localStorage so they survive page reloads. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Todo — Snapshot 10: Async + persistence</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Today's todos</h1>
+      <p id="summary">Loading...</p>
+    </header>
+
+    <main>
+      <form id="add-form">
+        <input
+          id="input-text"
+          type="text"
+          placeholder="What do you need to do?"
+          required
+          autocomplete="off"
+        >
+        <select id="input-priority">
+          <option value="1">HIGH</option>
+          <option value="2" selected>MED</option>
+          <option value="3">LOW</option>
+        </select>
+        <input
+          id="input-minutes"
+          type="number"
+          min="0"
+          max="999"
+          value="15"
+        >
+        <button type="submit">Add</button>
+      </form>
+
+      <ul id="todo-list"></ul>
+
+      <button id="reset-btn" type="button">Reset (clear storage + reload from API)</button>
+    </main>
+
+    <footer>
+      <p>Open DevTools → Console to see the fetch + storage log.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

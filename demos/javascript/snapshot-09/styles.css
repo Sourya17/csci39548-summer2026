@@ -1,0 +1,132 @@
+/* Snapshot 09 stylesheet — same as snapshot 08 plus the form. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+header h1 {
+  margin-bottom: 0.25rem;
+}
+
+#summary {
+  color: #666;
+  margin-top: 0;
+}
+
+/* ---------- Form ---------- */
+
+#add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: stretch;
+}
+
+#add-form input[type="text"] {
+  flex: 1;
+}
+
+#add-form input,
+#add-form select,
+#add-form button {
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+#add-form input[type="number"] {
+  width: 5rem;
+}
+
+#add-form button {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#add-form button:hover {
+  background: #1565c0;
+}
+
+/* ---------- Todo list ---------- */
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+
+.todo input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.todo .tier {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.todo.priority-1 .tier { background: #c62828; }
+.todo.priority-2 .tier { background: #ef6c00; }
+.todo.priority-3 .tier { background: #607d8b; }
+
+.todo .text {
+  flex: 1;
+}
+
+.todo .minutes {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.todo.done .text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo .delete-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.todo .delete-btn:hover {
+  color: #8e0000;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+}

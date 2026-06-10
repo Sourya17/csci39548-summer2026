@@ -1,0 +1,73 @@
+/* Tiny stylesheet so the page doesn't look like 1997.
+   All the interesting work is in script.js. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+header h1 {
+  margin-bottom: 0.25rem;
+}
+
+#summary {
+  color: #666;
+  margin-top: 0;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+
+.todo .tier {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.todo.priority-1 .tier { background: #c62828; }   /* HIGH — red */
+.todo.priority-2 .tier { background: #ef6c00; }   /* MED — orange */
+.todo.priority-3 .tier { background: #607d8b; }   /* LOW — grey */
+
+.todo .text {
+  flex: 1;
+}
+
+.todo .minutes {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.todo.done .text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+footer {
+  margin-top: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+}

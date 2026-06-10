@@ -1,0 +1,53 @@
+<!-- Snapshot 09: EVENTS + FORMS.
+     The setTimeouts from snapshot 08 are gone.
+     Real users click, type, and submit now. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JS Todo — Snapshot 09: Events + forms</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Today's todos</h1>
+      <p id="summary">Loading...</p>
+    </header>
+
+    <main>
+      <!-- ADD-TODO FORM -->
+      <form id="add-form">
+        <input
+          id="input-text"
+          type="text"
+          placeholder="What do you need to do?"
+          required
+          autocomplete="off"
+        >
+        <select id="input-priority">
+          <option value="1">HIGH</option>
+          <option value="2" selected>MED</option>
+          <option value="3">LOW</option>
+        </select>
+        <input
+          id="input-minutes"
+          type="number"
+          min="0"
+          max="999"
+          value="15"
+        >
+        <button type="submit">Add</button>
+      </form>
+
+      <!-- The JS will fill this <ul> with one <li> per todo. -->
+      <ul id="todo-list"></ul>
+    </main>
+
+    <footer>
+      <p>Open DevTools → Console to see the event log.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
