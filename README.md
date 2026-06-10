@@ -5,7 +5,7 @@
 Instructor: **Sourya Saha** · `sourya.saha24@login.cuny.edu`
 Schedule: **Mondays & Wednesdays · 6:40 – 9:48 PM** · Online synchronous (Zoom)
 Term: **June 1 – July 8, 2026**
-Course site: **Brightspace** (assignments, grades, recordings)
+Course site: **Brightspace** (assignments, grades)
 
 This repository holds the **public course materials** — syllabus, slides,
 assignment briefs, and the live-coding demos walked through in class. It is
