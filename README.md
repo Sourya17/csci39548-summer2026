@@ -26,8 +26,10 @@ updated **per class** as we cover new material.
 | **JavaScript demos** | [`demos/javascript/`](demos/javascript/) — `snapshot-01` … `snapshot-10` |
 | **Slides — TypeScript (full deck)** | [`slides/typescript.pdf`](slides/typescript.pdf) |
 | **TypeScript demos** | [`demos/typescript/`](demos/typescript/) — `snapshot-01` … `snapshot-09` |
-| **Slides — React (S5–S6, pp 1–50)** | [`slides/react.pdf`](slides/react.pdf) — rest of deck after S7 |
-| **React demos** | [`demos/react/`](demos/react/) — `snapshot-01` … `snapshot-08` (more after S7) |
+| **Slides — React (S5–S7, full deck)** | [`slides/react.pdf`](slides/react.pdf) |
+| **React demos** | [`demos/react/`](demos/react/) — `snapshot-01` … `snapshot-12` (full) |
+| **Slides — Tailwind (S7, full deck)** | [`slides/tailwind.pdf`](slides/tailwind.pdf) |
+| **Tailwind demos** | [`demos/tailwind/`](demos/tailwind/) — `snapshot-01` … `snapshot-03` |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
 | **Assignment 2** | [`assignments/assignment-02.pdf`](assignments/assignment-02.pdf) — due **Mon Jun 15** |
 | **Assignment 3** | [`assignments/assignment-03.pdf`](assignments/assignment-03.pdf) — due **Mon Jun 29** |
