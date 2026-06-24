@@ -30,6 +30,11 @@ updated **per class** as we cover new material.
 | **React demos** | [`demos/react/`](demos/react/) — `snapshot-01` … `snapshot-12` (full) |
 | **Slides — Tailwind (S7, full deck)** | [`slides/tailwind.pdf`](slides/tailwind.pdf) |
 | **Tailwind demos** | [`demos/tailwind/`](demos/tailwind/) — `snapshot-01` … `snapshot-03` |
+| **Slides — TanStack Query (S8, full deck)** | [`slides/tanstack.pdf`](slides/tanstack.pdf) |
+| **TanStack Query demos** | [`demos/tanstack-query/`](demos/tanstack-query/) — `snapshot-01` … `snapshot-04` |
+| **Slides — React Router (S8, full deck)** | [`slides/react-router.pdf`](slides/react-router.pdf) |
+| **React Router demos** | [`demos/react-router/`](demos/react-router/) — `snapshot-01` … `snapshot-04` |
+| **Slides — Build Your Own Backend (json-server mini-deck)** | [`slides/backend-json-db.pdf`](slides/backend-json-db.pdf) |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
 | **Assignment 2** | [`assignments/assignment-02.pdf`](assignments/assignment-02.pdf) — due **Mon Jun 15** |
 | **Assignment 3** | [`assignments/assignment-03.pdf`](assignments/assignment-03.pdf) — due **Mon Jun 29** |

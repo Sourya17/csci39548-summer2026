@@ -1,0 +1,13 @@
+{
+  "todos": [
+    { "id": 1, "text": "Buy groceries", "done": false, "minutes": 30, "assigneeId": 1 },
+    { "id": 2, "text": "Walk the dog", "done": true, "minutes": 20, "assigneeId": 2 },
+    { "id": 3, "text": "Read 20 pages", "done": false, "minutes": 40, "assigneeId": 1 },
+    { "id": 4, "text": "Write report", "done": true, "minutes": 60, "assigneeId": 3 }
+  ],
+  "users": [
+    { "id": 1, "name": "Ada Lovelace", "email": "ada@example.com" },
+    { "id": 2, "name": "Alan Turing", "email": "alan@example.com" },
+    { "id": 3, "name": "Grace Hopper", "email": "grace@example.com" }
+  ]
+}
