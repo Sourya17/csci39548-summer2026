@@ -35,9 +35,14 @@ updated **per class** as we cover new material.
 | **Slides — React Router (S8, full deck)** | [`slides/react-router.pdf`](slides/react-router.pdf) |
 | **React Router demos** | [`demos/react-router/`](demos/react-router/) — `snapshot-01` … `snapshot-04` |
 | **Slides — Build Your Own Backend (json-server mini-deck)** | [`slides/backend-json-db.pdf`](slides/backend-json-db.pdf) |
+| **Slides — Zustand (S9, full deck)** | [`slides/zustand.pdf`](slides/zustand.pdf) |
+| **Zustand demos** | [`demos/zustand/`](demos/zustand/) — `snapshot-01` … `snapshot-04` |
+| **Slides — Express (S9, full deck)** | [`slides/express.pdf`](slides/express.pdf) |
+| **Express demos** | [`demos/express/`](demos/express/) — `snapshot-01` … `snapshot-05` |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
 | **Assignment 2** | [`assignments/assignment-02.pdf`](assignments/assignment-02.pdf) — due **Mon Jun 15** |
 | **Assignment 3** | [`assignments/assignment-03.pdf`](assignments/assignment-03.pdf) — due **Mon Jun 29** |
+| **Assignment 4** | [`assignments/assignment-04.pdf`](assignments/assignment-04.pdf) — due **Mon Jul 6** |
 
 ---
 

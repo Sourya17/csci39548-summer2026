@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todos · Express demo</title>
+    <style>
+      body { font-family: system-ui; padding: 2rem; max-width: 32rem; }
+      ul { list-style: none; padding: 0; }
+      li { margin-bottom: 0.5rem; }
+      input[type="text"] { margin-right: 0.5rem; }
+      .done strong { text-decoration: line-through; }
+      .error { color: crimson; font-size: 0.9rem; margin-top: 0.5rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Todos</h1>
+    <ul id="list"></ul>
+    <form id="form">
+      <input id="text" type="text" placeholder="What needs doing?" />
+      <input id="minutes" type="number" value="15" style="width: 4rem" />
+      <button type="submit">Add</button>
+      <div id="error" class="error"></div>
+    </form>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

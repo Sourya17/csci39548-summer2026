@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>CORS demo</title></head>
+<body>
+  <h1>Cross-origin fetch demo</h1>
+  <p>Open this file from disk. Origin = <code>file://</code> (or similar). Express runs at <code>localhost:3000</code>. Different origin — CORS applies.</p>
+  <button id="go">Fetch /api/todos</button>
+  <pre id="out"></pre>
+  <script>
+    document.getElementById("go").onclick = async () => {
+      const out = document.getElementById("out");
+      out.textContent = "fetching...";
+      try {
+        const res = await fetch("http://localhost:3000/api/todos");
+        const data = await res.json();
+        out.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        out.textContent = "ERROR: " + err.message;
+      }
+    };
+  </script>
+</body>
+</html>
