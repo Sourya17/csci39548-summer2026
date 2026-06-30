@@ -31,6 +31,7 @@ updated **per class** as we cover new material.
 | **Slides — Tailwind (S7, full deck)** | [`slides/tailwind.pdf`](slides/tailwind.pdf) |
 | **Tailwind demos** | [`demos/tailwind/`](demos/tailwind/) — `snapshot-01` … `snapshot-03` |
 | **Slides — TanStack Query (S8, full deck)** | [`slides/tanstack.pdf`](slides/tanstack.pdf) |
+| **Slides — TanStack Query Install & Setup (mini-deck)** | [`slides/tanstack-install.pdf`](slides/tanstack-install.pdf) |
 | **TanStack Query demos** | [`demos/tanstack-query/`](demos/tanstack-query/) — `snapshot-01` … `snapshot-04` |
 | **Slides — React Router (S8, full deck)** | [`slides/react-router.pdf`](slides/react-router.pdf) |
 | **React Router demos** | [`demos/react-router/`](demos/react-router/) — `snapshot-01` … `snapshot-04` |
