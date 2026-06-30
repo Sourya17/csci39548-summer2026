@@ -9,7 +9,7 @@ const PORT = Number(process.env.PORT ?? 3000);
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN ?? "*",
+    origin: process.env.FRONTEND_ORIGIN ?? "http://localhost:5173",
   })
 );
 app.use(requestLogger);
