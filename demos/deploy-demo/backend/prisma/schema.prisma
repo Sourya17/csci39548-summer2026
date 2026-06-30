@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// A Todo can belong to a Category. A Category can have many Todos.
+// One-to-many: Category is the "one" side, Todo is the "many" side.
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  todos Todo[]
+}
+
+model Todo {
+  id         Int       @id @default(autoincrement())
+  text       String
+  done       Boolean   @default(false)
+  minutes    Int
+  createdAt  DateTime  @default(now())
+
+  // The FK is optional — old todos can have null category.
+  // onDelete: SetNull means deleting a Category nulls the FK on its Todos,
+  // not deletes the Todos.
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  categoryId Int?
+}
