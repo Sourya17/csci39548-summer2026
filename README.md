@@ -40,6 +40,12 @@ updated **per class** as we cover new material.
 | **Zustand demos** | [`demos/zustand/`](demos/zustand/) — `snapshot-01` … `snapshot-04` |
 | **Slides — Express (S9, full deck)** | [`slides/express.pdf`](slides/express.pdf) |
 | **Express demos** | [`demos/express/`](demos/express/) — `snapshot-01` … `snapshot-05` |
+| **Slides — Prisma (S10, full deck)** | [`slides/prisma.pdf`](slides/prisma.pdf) |
+| **Prisma demos** | [`demos/prisma/`](demos/prisma/) — `snapshot-01` … `snapshot-04` |
+| **Slides — Deploy (S10, Vercel + Render + Neon)** | [`slides/deploy.pdf`](slides/deploy.pdf) |
+| **Deploy demo** | [`demos/deploy-demo/`](demos/deploy-demo/) — backend + frontend for the walkthrough |
+| **Slides — Clerk (S10 bonus, managed auth)** | [`slides/clerk.pdf`](slides/clerk.pdf) |
+| **Clerk demo** | [`demos/clerk/`](demos/clerk/) — `snapshot-01` … `snapshot-02` |
 | **Assignment 1** | [`assignments/assignment-01.pdf`](assignments/assignment-01.pdf) — due **Mon Jun 8** |
 | **Assignment 2** | [`assignments/assignment-02.pdf`](assignments/assignment-02.pdf) — due **Mon Jun 15** |
 | **Assignment 3** | [`assignments/assignment-03.pdf`](assignments/assignment-03.pdf) — due **Mon Jun 29** |

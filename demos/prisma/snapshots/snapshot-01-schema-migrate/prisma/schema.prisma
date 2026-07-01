@@ -1,0 +1,21 @@
+// Prisma schema = single source of truth for your database shape.
+// Change this file, run `npx prisma migrate dev`, get a migration + updated client.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // SQLite for the class demo — zero infra.
+  // Snapshot 04 shows the one-line swap to Postgres (Neon).
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  text      String
+  done      Boolean  @default(false)
+  minutes   Int
+  createdAt DateTime @default(now())
+}

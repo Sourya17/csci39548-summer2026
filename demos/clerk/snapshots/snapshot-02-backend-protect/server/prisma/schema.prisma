@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// One new column vs the Prisma demo: userId.
+// Clerk hands us a stable user id (e.g. "user_2abc...") on every authed
+// request. We store it on each Todo so we can scope queries per user.
+model Todo {
+  id        Int      @id @default(autoincrement())
+  text      String
+  done      Boolean  @default(false)
+  minutes   Int
+  userId    String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}

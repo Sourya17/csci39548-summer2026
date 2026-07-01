@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // The one-line swap. Everything else is identical to snapshot 03.
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  todos Todo[]
+}
+
+model Todo {
+  id         Int       @id @default(autoincrement())
+  text       String
+  done       Boolean   @default(false)
+  minutes    Int
+  createdAt  DateTime  @default(now())
+
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  categoryId Int?
+}

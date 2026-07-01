@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// SNAPSHOT 01 — no userId column yet. Todos belong to no one.
+// Anyone hitting /api/todos sees the same global list.
+model Todo {
+  id        Int      @id @default(autoincrement())
+  text      String
+  done      Boolean  @default(false)
+  minutes   Int
+  createdAt DateTime @default(now())
+}
